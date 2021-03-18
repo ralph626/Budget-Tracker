@@ -2,7 +2,8 @@
 
 A workout tracker. Using Mongo database with Mongoose schema and handle routes with express
 
-![Logo of the project](screenshot goes here)
+![Logo of the project](https://github.com/ralph626/Budget-Tracker/blob/main/images/homepage.PNG?raw=true)
+![Logo of the project](https://github.com/ralph626/Budget-Tracker/blob/main/images/afterInput.PNG?raw=true)
 
 A link to a demonstration of the app:
 https://drive.google.com/file/d/15Ud9EU99Y8YGzZJLMA1C9r9b9-MYzUed/view
@@ -66,7 +67,7 @@ branch. Pull requests are warmly welcome."
 
 ## Links
 
-Heroku: https://ralphs-budget-tracker.herokuapp.com/
+Deploy on Heroku: https://ralphs-budget-tracker.herokuapp.com/
 
 - Project homepage:
 
