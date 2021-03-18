@@ -9,7 +9,7 @@ if ("serviceWorker" in navigator) {
 const cacheFiles = [
   "/",
   "font-awesome/css/font-awesome.css",
-  "https://cdn.jsdelivr.net/npm/chart.js@2.8.0",
+  // "https://cdn.jsdelivr.net/npm/chart.js@2.8.0",
   "index.js",
   "serviceworker.js",
   "manifest.webmanifest",
@@ -29,17 +29,54 @@ self.addEventListener("install", (ev) => {
   );
 });
 
-self.addEventListener("fetch", (ev) => {
-  ev.respondWith(
-    caches.match(ev.request).then((found) => {
-      if (!found || found.status !== 200) {
-        return found;
+self.addEventListener("fetch", function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      if (response) {
+        return response;
       }
-      let local = found.clone();
-      caches.open(cacheName).then((cache) => {
-        cache.put(ev.request, local);
+      return fetch(event.request, { credentials: "include" }).then(function (
+        response
+      ) {
+        // Check if we received a valid response
+        if (!response || response.status !== 200 || response.type !== "basic") {
+          return response;
+        }
+        let responseToCache = response.clone();
+
+        caches.open(cacheName).then(function (cache) {
+          cache.put(event.request, responseToCache);
+        });
+
+        return response;
       });
-      return found;
     })
   );
 });
+self.addEventListener("activate", function (event) {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames
+          .filter(function (cacheName) {})
+          .map(function (cacheName) {
+            return caches.delete(cacheName);
+          })
+      );
+    })
+  );
+});
+
+// self.addEventListener("fetch", (ev) => {
+//   if (ev.request.method !== "GET") return;
+
+//   ev.respondWith(async () => {
+//     const cache = await caches.open(cacheName);
+//     const cachedResponse = await cache.match(ev.request);
+//     if (cachedResponse) {
+//       // ev.waitUntil(cache.add(ev.request));
+//       return cachedResponse;
+//     }
+//     return fetch(ev.request);
+//   });
+// });

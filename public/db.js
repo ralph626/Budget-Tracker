@@ -22,13 +22,18 @@ function upload() {
   const records = store.getAll(); //
   records.onsuccess = () => {
     if (records.result.length > 0) {
-      fetch("/api/transactions/bulk", {
+      fetch("/api/transaction/bulk", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(records.result),
       })
         .then((j) => j.json())
         .then((res) => {
+          const transaction = db.transaction(
+            ["pending-transactions"],
+            "readwrite"
+          );
+          const store = transaction.objectStore("pending-transactions");
           store.clear();
         });
     }
