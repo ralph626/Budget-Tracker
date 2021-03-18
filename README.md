@@ -4,11 +4,14 @@ A workout tracker. Using Mongo database with Mongoose schema and handle routes w
 
 ![Logo of the project](screenshot goes here)
 
-A link to a demonstration of the app: <!-- video link goes here -->
+A link to a demonstration of the app:
+https://drive.google.com/file/d/15Ud9EU99Y8YGzZJLMA1C9r9b9-MYzUed/view
 
-# Tech Blog
+https://drive.google.com/file/d/1udSDQKBAgeno43_oDKtaDLSY6xLPm6v6/view
 
-<!-- a small description of the app -->
+# Budget-Tracker Description:
+
+With the budget tracker it makes it easier to keep track of how much the user keeps track of their expenses
 
 ## Installing
 
@@ -46,9 +49,7 @@ executed.
 
 link to the Deployed application
 
-<!-- URL of Heroku  -->
-
-https://boiling-caverns-89675.herokuapp.com/?id=604fc75050c09a001562300f
+https://ralphs-budget-tracker.herokuapp.com/
 
 ## Features
 
@@ -65,7 +66,7 @@ branch. Pull requests are warmly welcome."
 
 ## Links
 
-<!-- link to heroku deployed app -->
+Heroku: https://ralphs-budget-tracker.herokuapp.com/
 
 - Project homepage:
 
