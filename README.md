@@ -13,6 +13,7 @@ https://drive.google.com/file/d/1udSDQKBAgeno43_oDKtaDLSY6xLPm6v6/view
 # Budget-Tracker Description:
 
 With the budget tracker it makes it easier to keep track of how much the user keeps track of their expenses
+Budget Tracker provides ease of mind keeping a graph that provides a visual of all expenses through the month. Easily input spending, deposits, etc., while offline stores important information until back online.
 
 ## Installing
 
